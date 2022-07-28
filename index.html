@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Animation</title>
+  </head>
+  <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #343F4F;
+}
+.wrapper{
+  display: flex;
+}
+.wrapper .static-txt{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color:  #4d4dff;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 80px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #343F4F;
+  border-left: 2px solid #6666ff;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
+
+  </style>
+  <body>
+      <div class="wrapper">
+        <div class="static-txt">Hi</div>
+        <ul class="dynamic-txts">
+          <li><span>Thanks</span></li>
+          <li><span>for</span></li>
+          <li><span>Watching</span></li>
+          <li><span>Please</span></li>
+          <li><span>Subscribe</span></li>
+        </ul>
+      </div>
+  </body>
+</html>
